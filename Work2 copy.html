@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRIMECORP-COMMERCE</title>
+<link rel="stylesheet" href="2Live.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background: #333;
+    padding: 15px 20px;
+    color: white;
+}
+
+/* FILTER BAR */
+.filter-bar {
+    padding: 20px 40px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-bar input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    flex: 1;
+}
+
+/* Category buttons */
+.category-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.category-btn.active {
+    background: #3498db;
+    color: white;
+}
+
+/* Sort */
+select {
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* GRID */
+.container {
+    padding: 20px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-price {
+    color: green;
+    font-weight: bold;
+}
+
+.card-btn {
+    display: block;
+    text-align: center;
+    background: #3498db;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.card-btn:hover {
+    background: #2980b9;
+}
+
+/* NO RESULT */
+#no-result {
+    text-align: center;
+    display: none;
+    padding: 20px;
+    font-weight: bold;
+}
+body {
+    background: url("img/BG_img-TIK.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">CRIMECORP™</div>
+
+    <div class="nav-menu">
+        <a href="Work2 copy.html">Beranda</a>
+        <a href="Wish4list.html">Wishlist ❤️</a>
+        <a href="https://www.google.com/maps/place/SMP+Muhammadiyah+2+Taman+%7C+Sekolah+SMP+Swasta+Islami+Terbaik,+Favorit,+Unggulan+di+Sidoarjo,+Surabaya+Jawa+Timur/@-7.344207,112.6940071,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd7fcb6ba9e3181:0xd019f183504ca26d!8m2!3d-7.344207!4d112.696582!16s%2Fg%2F1jkw627z9?entry=ttu&g_ep=EgoyMDI2MDQyMC4wIKXMDSoASAFQAw%3D%3D">Lokasi</a>
+        <a href="https://www.youtube.com/@Tavish-Finnegan">Profil Pemilik</a>
+        <a href="https://discord.gg/gaqRz28hJv">Kontak Kami</a>
+    </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+
+    <!-- Search -->
+    <input type="text" id="search" placeholder="Search product...">
+
+    <!-- Category buttons -->
+    <button class="category-btn active" data-cat="all">All</button>
+    <button class="category-btn" data-cat="original">Original</button>
+    <button class="category-btn" data-cat="cake">Cake</button>
+
+    <!-- Sort -->
+    <select id="sort">
+        <option value="default">Sort</option>
+        <option value="low">Price Low → High</option>
+        <option value="high">Price High → Low</option>
+    </select>
+
+</div>
+
+<!-- PRODUCTS -->
+<div class="container" id="product-list">
+
+    <div class="card" data-category="original" data-price="10000">
+        <img src="img/tape-atau-tapai-singkong-adalah-makanan-tradisional-camilan-dari-indonesia-yang-terbuat-dari-singkong-yang-difermentasi_431906-3157.avif">
+        <div class="card-content">
+            <h3 class="card-title">Tape Original
+                <button class="wishlist-btn">♡</button>
+            </h3>
+            <p class="rating">⭐⭐⭐☆☆ (3.5)</p>
+            <p>Tape singkong tradisional dengan rasa manis alami dan tekstur lembut. 
+                Cocok sebagai camilan klasik khas Indonesia.</p>
+            <p class="card-price">Rp 10.000</p>
+            <a href="checkout2.html" class="card-btn">Add to Cart</a>
+        </div>
+    </div>
+
+    <!-- CARD 3 -->
+<div class="card" data-category="original" data-price="15000">
+    <div class="badge">Best Seller</div>
+    <img src="img/TapeKeju">
+    <div class="card-content">
+        <h3 class="card-title">Tape Keju
+            <button class="wishlist-btn">♡</button>
+        </h3>
+        <p class="rating">⭐⭐⭐⭐☆ (4.5)</p>
+        <p>Perpaduan tape manis dengan topping keju gurih yang lumer. 
+            Memberikan rasa creamy dan lebih nikmat di setiap gigitan.</p>
+        <p class="card-price">Rp 15.000</p>
+        <a href="checkout4.html" class="card-btn">Add to Cart</a>
+    </div>
+</div>
+
+<!-- CARD 4 -->
+<div class="card" data-category="cake" data-price="25000">
+    <img src="img/TapeBrownies">
+    <div class="card-content">
+        <h3 class="card-title">Brownies Tape
+            <button class="wishlist-btn">♡</button>
+        </h3>
+        <p class="rating">⭐⭐⭐⭐☆ (4)</p>
+        <p>Brownies lembut dengan sentuhan tape yang khas. 
+            Rasa cokelat berpadu manis-fermentasi, unik dan lezat.</p>
+        <p class="card-price">Rp 25.000</p>
+        <a href="checkout5.html" class="card-btn">Add to Cart</a>
+    </div>
+</div>
+
+    <div class="card" data-category="cake" data-price="20000">
+        <div class="badge">Best Seller</div>
+        <img src="img/tape bolu yes.webp">
+        <div class="card-content">
+            <h3 class="card-title">Bolu Tape
+                <button class="wishlist-btn">♡</button>
+            </h3>
+            <p class="rating">⭐⭐⭐⭐☆ (4.5)</p>
+            <p>Bolu empuk dengan aroma tape yang harum. 
+                Ringan, manis, dan cocok untuk teman santai.</p>
+            <p class="card-price">Rp 20.000</p>
+            <a href="checkout3.html" class="card-btn">Add to Cart</a>
+        </div>
+    </div>
+
+</div>
+
+<div id="no-result">No products found 😢</div>
+
+<section class="about">
+    <h1 style="text-align: center;">About Us</h1>
+
+    <p>
+        CRIMECORP™ adalah proyek e-commerce sederhana yang dikembangkan oleh tim kami 
+        sebagai bagian dari tugas sekolah. Kami berfokus pada penjualan olahan 
+        tape singkong dengan berbagai variasi modern.
+    </p>
+
+    <p>
+        Berawal dari tugas IPA science, kami mengembangkan produk seperti
+        Tape Original, Tape Keju, hingga Brownies  dan Bolu Tape agar lebih 
+        menarik bagi semua kalangan.
+    </p>
+
+    <p>
+        Website ini dibuat dengan harapan dan mimpi.
+    </p>
+
+    <h3>Our Team</h3>
+    <ul>
+        <li>👨‍💻 Pengembang: Ivan</li>
+        <li>🎨 Artistic Design: Ivan</li>
+        <li>📦 Produk: Team IV KWU & SCIENCE</li>
+    </ul>
+</section>
+
+<!-- SCRIPT -->
+<script>
+const search = document.getElementById("search");
+const buttons = document.querySelectorAll(".category-btn");
+const cards = document.querySelectorAll(".card");
+const sort = document.getElementById("sort");
+const container = document.getElementById("product-list");
+const noResult = document.getElementById("no-result");
+
+let currentCategory = "all";
+
+/* FILTER */
+function filterProducts() {
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+        const title = card.querySelector(".card-title").textContent.toLowerCase();
+        const category = card.dataset.category;
+
+        const matchSearch = title.includes(search.value.toLowerCase());
+        const matchCategory = currentCategory === "all" || category === currentCategory;
+
+        if (matchSearch && matchCategory) {
+            card.style.display = "block";
+            visibleCount++;
+        } else {
+            card.style.display = "none";
+        }
+    });
+
+    noResult.style.display = visibleCount === 0 ? "block" : "none";
+}
+
+/* CATEGORY BUTTON */
+buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        currentCategory = btn.dataset.cat;
+        filterProducts();
+    });
+});
+
+/* SEARCH */
+search.addEventListener("input", filterProducts);
+
+/* SORT */
+sort.addEventListener("change", () => {
+    const sorted = Array.from(cards).sort((a, b) => {
+        const priceA = parseInt(a.dataset.price);
+        const priceB = parseInt(b.dataset.price);
+
+        if (sort.value === "low") return priceA - priceB;
+        if (sort.value === "high") return priceB - priceA;
+        return 0;
+    });
+
+    sorted.forEach(card => container.appendChild(card));
+});
+
+// WISHLIST SYSTEM
+const wishlistButtons = document.querySelectorAll(".wishlist-btn");
+
+// Load saved wishlist
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+wishlistButtons.forEach((btn, index) => {
+    const card = btn.closest(".card");
+    const title = card.querySelector(".card-title").textContent;
+
+    // Check if already saved
+    if (wishlist.includes(title)) {
+        btn.classList.add("active");
+        btn.textContent = "♥";
+    }
+
+    btn.addEventListener("click", () => {
+        if (wishlist.includes(title)) {
+            // Remove
+            wishlist = wishlist.filter(item => item !== title);
+            btn.classList.remove("active");
+            btn.textContent = "♡";
+        } else {
+            // Add
+            wishlist.push(title);
+            btn.classList.add("active");
+            btn.textContent = "♥";
+        }
+
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    });
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+.container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-menu a:hover {
+    color: #00bcd4;
+}
+.wishlist-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    float: right;
+}
+
+.wishlist-btn.active {
+    color: red;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4); /* adjust 0.3–0.6 */
+    z-index: -1;
+}
+body {
+    margin: 0;
+    font-family: Arial;
+
+    background: url("your-image.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* BLUR LAYER */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+.card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.rating {
+    font-size: 13px;
+    color: #f1c40f;
+}
+.badge {
+    position: absolute;
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 0 0 10px 0;
+}
+.card {
+    position: relative;
+}
+.about {
+    margin: 40px;
+    padding: 30px;
+
+    background: rgba(255,255,255,0.9);
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.about h2 {
+    margin-top: 0;
+}
+
+.about p {
+    color: #444;
+    line-height: 1.6;
+}
+
+.about ul {
+    padding-left: 20px;
+}

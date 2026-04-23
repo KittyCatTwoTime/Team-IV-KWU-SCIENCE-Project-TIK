@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout - CRIMECORP</title>
+<link rel="stylesheet" href="3live.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+    background: #333;
+    color: white;
+    padding: 15px;
+}
+
+/* Layout */
+.checkout-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Text */
+h2 {
+    margin-top: 0;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+/* Price box */
+.summary {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">CRIMECORP™</div>
+
+    <div class="nav-menu">
+        <a href="Work2 copy.html">Beranda</a>
+        <a href="https://www.google.com/maps/place/SMP+Muhammadiyah+2+Taman+%7C+Sekolah+SMP+Swasta+Islami+Terbaik,+Favorit,+Unggulan+di+Sidoarjo,+Surabaya+Jawa+Timur/@-7.344207,112.6940071,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd7fcb6ba9e3181:0xd019f183504ca26d!8m2!3d-7.344207!4d112.696582!16s%2Fg%2F1jkw627z9?entry=ttu&g_ep=EgoyMDI2MDQyMC4wIKXMDSoASAFQAw%3D%3D">Lokasi</a>
+        <a href="https://www.youtube.com/@Tavish-Finnegan">Profil Pemilik</a>
+        <a href="https://discord.gg/gaqRz28hJv">Kontak Kami</a>
+    </div>
+</div>
+
+<div class="checkout-container">
+
+    <h2>Order Summary</h2>
+
+    <div class="summary">
+        <p><strong>Product: Brownies Tape</strong><span id="product-name"></span></p>
+        <p><strong>Price: RP 25.000</strong></p>
+        <p><strong>Quantity:</strong> <span id="qty">1</span></p>
+        <p><strong>Total: RP 25.000</strong></p>
+    </div>
+
+    <h2>Customer Info</h2>
+
+    <form onsubmit="return orderSuccess()">
+        <label>Nama</label>
+        <input type="text" required>
+
+        <label>Alamat</label>
+        <input type="text" required>
+
+        <label>Jumlah</label>
+        <input type="number" id="quantity" value="1" min="1" max="1" required>
+
+        <button type="submit">Beli Sekarang</button>
+    </form>
+
+</div>
+
+<script>
+// Get URL data
+const params = new URLSearchParams(window.location.search);
+const name = params.get("name");
+const price = parseInt(params.get("price"));
+
+// Set product info
+document.getElementById("product-name").textContent = name;
+document.getElementById("product-price").textContent = price;
+
+// Quantity logic
+const qtyInput = document.getElementById("quantity");
+const qtyText = document.getElementById("qty");
+const totalText = document.getElementById("total");
+
+function updateTotal() {
+    let qty = parseInt(qtyInput.value);
+    qtyText.textContent = qty;
+    totalText.textContent = price * qty;
+}
+
+// Initial
+updateTotal();
+
+// Update on change
+qtyInput.addEventListener("input", updateTotal);
+
+// Fake success
+function orderSuccess() {
+    alert("Pesanan berhasil dibuat!");
+    return false;
+}
+</script>
+
+</body>
+</html>
